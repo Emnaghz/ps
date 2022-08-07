@@ -1,0 +1,55 @@
+//PLUS PETIT COMMUN MULTIPLE
+__lcm(A, B);
+
+int ppcm(int a,int b){
+  int p=a*b;
+  while (a!=b) if (a<b) b-=a; else a-=b;
+  return p/a;
+}
+
+int PPCM(int a, int b)
+{
+    int ppcm = (a > b) ? a : b;
+  
+    // Toujours vrai
+    while(1)
+    {
+        if( ppcm%a == 0 && ppcm%b == 0 )
+        {
+            printf("PPCM de %d et %d = %d", a, b, ppcm);
+            break;
+        }
+        ++ppcm;
+    }
+    return 0;
+}
+
+//PLUS GRAND COMMUN DIVISEUR
+__gcd(A, B);
+
+---!methode recursive---- 
+int PGCD(int a, int b)
+{
+    if(a==b)
+    {
+            return a;        
+    }     
+    else
+    {
+        if(a>b)
+           return PGCD(a-b, b);
+        else
+           return PGCD(a, b-a);
+    }
+}
+
+int PGCD(int x, int y){
+  int a=x;
+  int b=y;
+  while (a!=b)
+  {
+    while (a>b) b=b+y;
+    while (a<b) a=a+x;
+  }
+  return a;
+}
