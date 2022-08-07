@@ -11,3 +11,4 @@ int search(vector<int>& nums, int target) {
            }
         return -1;
     }
+//algorithm with O(log n) runtime complexity
